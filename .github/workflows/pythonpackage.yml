@@ -25,7 +25,7 @@ env:
   QASE_PROJECT_CODE: ${{ inputs.qase_project_code }}
   QASE_RUN_ID: ${{ inputs.qase_run_id }}
   QASE_RUN_COMPLETE: ${{ inputs.qase_run_complete }}
-  QASE_API_TOKEN: ${{ secrets.QASE_API_TOKEN }}
+  QASE_API_TOKEN: ${{ secrets.QASE }}
   
 jobs:
   build-php:
@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: qase-tms/qase-link-run@main
         env:
-          QASE_API_TOKEN: ${{ env.QASE_API_TOKEN }}
+          QASE_API_TOKEN: ${{ env.QASE}}
   test:
     runs-on: ubuntu-latest
     strategy:
